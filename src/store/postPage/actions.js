@@ -20,12 +20,12 @@ export const fetchPostDetails = (id) => async (dispatch, getState) => {
     console.log(
       "Response fetchPosts",
       postResponse.data,
-      commentsResponse.data.rows
+      commentsResponse.data
     );
     dispatch(
       postFullyFetched({
         post: postResponse.data,
-        comments: commentsResponse.data.rows,
+        comments: commentsResponse.data,
       })
     );
   } catch (e) {

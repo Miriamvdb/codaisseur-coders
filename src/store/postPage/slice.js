@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  loading: false,
+  loading: true,
   post: null,
   comments: [],
 };
 
-export const postSlice = createSlice({
+export const postPageSlice = createSlice({
   name: "postPage",
   initialState,
   reducers: {
@@ -23,5 +23,5 @@ export const postSlice = createSlice({
   },
 });
 
-export const { startLoadingPost, postFullyFetched } = postSlice.actions;
-export default postSlice.reducer;
+export const { startLoadingPost, postFullyFetched } = postPageSlice.actions;
+export default postPageSlice.reducer;
