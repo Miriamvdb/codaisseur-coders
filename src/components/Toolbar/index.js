@@ -27,7 +27,7 @@ const Toolbar = () => {
           <>
             <button onClick={() => dispatch(logOut())}>Logout</button>
             <p>
-              Welcome, <b>{user.data.name}</b>
+              Welcome, <b>{user.name}</b>
             </p>
           </>
         ) : (

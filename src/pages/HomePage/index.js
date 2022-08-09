@@ -28,17 +28,11 @@ const HomePage = () => {
                 <NavLink to={`/post/${post.id}`} className="link-homepage">
                   <h3>{post.title}</h3>
                 </NavLink>
-                <p>
-                  {moment(post.createdAt).format("DD-MM-YYYY")}
-                  {/* <span>
-                    {post.tags.map((tag) => {
-                      return <p key={tag.id}>{tag.tag}</p>;
-                    })}
-                  </span> */}
-                </p>
+                <p>{moment(post.createdAt).format("DD-MM-YYYY")}</p>
               </div>
             );
           })}
+      <br />
       <button onClick={() => dispatch(fetchPosts())}>Load more..</button>
     </div>
   );

@@ -1,6 +1,6 @@
 .container-homepage {
   margin: 3rem;
-  padding: 1rem 3rem;
+  padding: 1rem 3rem 3rem 3rem;
   border: 1px solid black;
 }
 
@@ -11,4 +11,8 @@
 
 .link-homepage:hover {
   color: tomato;
+}
+
+button {
+  cursor: pointer;
 }
