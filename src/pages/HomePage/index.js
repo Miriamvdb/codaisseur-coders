@@ -4,6 +4,7 @@ import { selectFeedPosts } from "../../store/feed/selectors";
 import { fetchPosts } from "../../store/feed/actions";
 import moment from "moment";
 import "./styles.css";
+import { NavLink } from "react-router-dom";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -24,7 +25,9 @@ const HomePage = () => {
         : posts.map((post) => {
             return (
               <div key={post.id}>
-                <h3>{post.title}</h3>
+                <NavLink to={`/post/${post.id}`} className="link-homepage">
+                  <h3>{post.title}</h3>
+                </NavLink>
                 <p>
                   {moment(post.createdAt).format("DD-MM-YYYY")}
                   {/* <span>
