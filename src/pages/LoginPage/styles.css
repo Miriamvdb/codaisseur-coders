@@ -1,0 +1,28 @@
+.container-login {
+  margin: 3rem;
+  padding: 3rem;
+  border: 1px solid black;
+}
+
+.link-login {
+  text-decoration: none;
+  color: black;
+}
+
+.link-login:hover {
+  color: tomato;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  gap: 1rem;
+}
+
+.input-login {
+  height: 1.5rem;
+  padding-left: 0.5rem;
+  border: none;
+  background-color: rgb(225, 225, 225);
+}
