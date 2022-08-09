@@ -1,22 +1,21 @@
-import { useDispatch, useSelector } from "react-redux"; // 2.
-import { useEffect } from "react"; // 3.
-import { selectFeedPosts } from "../../store/feed/selectors"; // 2.
-import { fetchPosts } from "../../store/feed/actions"; // 3.
-import moment from "moment"; // 4.
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { selectFeedPosts } from "../../store/feed/selectors";
+import { fetchPosts } from "../../store/feed/actions";
+import moment from "moment";
 import "./styles.css";
 
 const HomePage = () => {
-  const dispatch = useDispatch(); // 2.
-  const posts = useSelector(selectFeedPosts); // 2.
+  const dispatch = useDispatch();
+  const posts = useSelector(selectFeedPosts);
   console.log("Posts?", posts);
 
-  // 3. Dispatch fetchPosts in useEffect
+  // Dispatch fetchPosts in useEffect
   // This is the necessary step to fetch the data and put it in the Redux store
   useEffect(() => {
     dispatch(fetchPosts());
   }, [dispatch]);
 
-  // 4. Display data
   return (
     <div className="container-homepage">
       <h1>Feed</h1>
@@ -37,6 +36,7 @@ const HomePage = () => {
               </div>
             );
           })}
+      <button onClick={() => dispatch(fetchPosts())}>Load more..</button>
     </div>
   );
 };

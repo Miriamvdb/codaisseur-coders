@@ -13,11 +13,10 @@ export const feedSlice = createSlice({
       state.loading = true;
     },
 
-    // in this case we assume that action.payload is going to be an array of posts,
-    // it's always good to double check once you get the data
+    // 3. Modify the case to accommodate more posts. First copy the
+    // posts that are currently in the state, then add the new ones.
     postsFetched: (state, action) => {
-      console.log("postFetched action", action); // to see what data is coming from the thunk [{}, {}, {}]
-      state.posts = [...action.payload]; // get our list of posts from the action payload
+      state.posts = [...state.posts, ...action.payload];
       state.loading = false;
     },
   },
