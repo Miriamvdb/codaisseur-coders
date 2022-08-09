@@ -19,7 +19,7 @@ export const login = (email, password) => async (dispatch, getState) => {
     const profileResponse = await axios.get(`${apiUrl}/me`, {
       headers: { authorization: `Bearer ${jwt}` },
     });
-
+    // to persist the user's session
     localStorage.setItem("token", jwt);
     // dispatch an action that saves the token and the user's profile
     // write a new userLoggedIn case in auth slice reducer for this

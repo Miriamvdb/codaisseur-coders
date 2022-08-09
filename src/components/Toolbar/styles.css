@@ -2,12 +2,23 @@
   margin: 3rem 6rem;
 }
 
+.links-toolbar {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 3rem;
+}
+
 .link-toolbar {
   text-decoration: none;
   color: black;
-  margin-right: 2rem;
 }
 
 .link-toolbar:hover {
   color: tomato;
+}
+
+button {
+  border: none;
+  font-size: 16px;
 }
