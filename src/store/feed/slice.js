@@ -13,14 +13,28 @@ export const feedSlice = createSlice({
       state.loading = true;
     },
 
-    // 3. Modify the case to accommodate more posts. First copy the
-    // posts that are currently in the state, then add the new ones.
     postsFetched: (state, action) => {
       state.posts = [...state.posts, ...action.payload];
       state.loading = false;
     },
+
+    // 1. Add a new case
+    createNewPostSuccess: (state, action) => {
+      console.log("New post slice", action);
+      // 5. Logic to add the new post to "posts"
+      // Remember the parameter you passed in to the action
+      // is available as action.payload in the reducer.
+      // const { title, content } = action.payload;
+      // const newPost = {
+      //   id: Math.floor(Math.random() * 1000),
+      //   title,
+      //   content,
+      // };
+      state.posts.push(action.payload);
+    },
   },
 });
 
-export const { startLoading, postsFetched } = feedSlice.actions;
+export const { startLoading, postsFetched, createNewPostSuccess } =
+  feedSlice.actions;
 export default feedSlice.reducer;

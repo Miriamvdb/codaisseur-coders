@@ -25,9 +25,18 @@ const Toolbar = () => {
         </NavLink>
         {user ? (
           <>
+            <NavLink
+              to="/newpost"
+              className="link-toolbar"
+              style={({ isActive }) =>
+                isActive ? { fontWeight: "bold", color: "tomato" } : undefined
+              }
+            >
+              New post
+            </NavLink>
             <button onClick={() => dispatch(logOut())}>Logout</button>
             <p>
-              Welcome, <b>{user.name}</b>
+              Welcome, <b>{user.data.name}</b>
             </p>
           </>
         ) : (

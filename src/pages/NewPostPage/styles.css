@@ -1,0 +1,12 @@
+.container-newpostpage {
+  margin: 3rem;
+  padding: 3rem;
+  border: 1px solid black;
+}
+
+.input-newpost {
+  height: 1.5rem;
+  padding-left: 0.5rem;
+  border: none;
+  background-color: rgb(225, 225, 225);
+}
